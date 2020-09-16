@@ -88,16 +88,31 @@
 				height: 200px;
 			}
 		</style>
+		<script>
+			function init(){
+				//书写轮播图显示的定时操作
+				window.setInterval("changeImg()",3000);
+			}
+			
+			var i =0;
+			function changeImg(){
+				i++;
+				document.getElementById("img1").src="./img/"+i+".jpg";
+				if(i=3){
+					i=0;
+				}
+			}
+		</script>
 	</head>
-	<body>
+	<body onload="init()">
 		<div id="father">
 			<!-- 1.logo部分 -->
 			<div id="logo">
 				<div class="top">
-					<img src="../img/logo2.png" height="46px" />
+					<img src="./img/logo2.png" height="46px" />
 				</div>
 				<div class="top">
-					<img src="../img/header.png" height="46px" />
+					<img src="./img/header.png" height="46px" />
 				</div>
 				<div class="top" id="top">
 					<a href="#">登录</a>
@@ -127,58 +142,58 @@
 			<div id="product">
 				<div id="product_top">
 					<span>&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size: 25px;font-weight: 200;">最新产品</font>&nbsp;&nbsp;</span>
-					<img src="../img/title2.jpg" />
+					<img src="./img/title2.jpg" />
 				</div>
 				<div id="product_bottom">
 					<div id="product_bottom_left">
-						<img src="../img/big01.jpg" height="100%" width="100%" />
+						<img src="./img/big01.jpg" height="100%" width="100%" />
 					</div>
 					<div id="product_bottom_right">
 						<div id="big">
-							<img src="../img/middle01.jpg" height="100%" width="100%" />
+							<img src="./img/middle01.jpg" height="100%" width="100%" />
 						</div>
 						<div class="small">
-							<img src="../img/small03.jpg" />
+							<img src="./img/small03.jpg" />
 							<a href="#"><p color="gray">电视</p></a>
 							<p style="color: red;">¥2999</p>
 						</div>
 						<div class="small">
-							<img src="../img/small03.jpg" />
+							<img src="./img/small03.jpg" />
 							<a href="#"><p color="gray">电视</p></a>
 							<p style="color: red;">¥2999</p>
 						</div>
 						<div class="small">
-							<img src="../img/small03.jpg" />
+							<img src="./img/small03.jpg" />
 							<a href="#"><p color="gray">电视</p></a>
 							<p style="color: red;">¥2999</p>
 						</div>
 						<div class="small">
-							<img src="../img/small03.jpg" />
+							<img src="./img/small03.jpg" />
 							<a href="#"><p color="gray">电视</p></a>
 							<p style="color: red;">¥2999</p>
 						</div>
 						<div class="small">
-							<img src="../img/small03.jpg" />
+							<img src="./img/small03.jpg" />
 							<a href="#"><p color="gray">电视</p></a>
 							<p style="color: red;">¥2999</p>
 						</div>
 						<div class="small">
-							<img src="../img/small03.jpg" />
+							<img src="./img/small03.jpg" />
 							<a href="#"><p color="gray">电视</p></a>
 							<p style="color: red;">¥2999</p>
 						</div>
 						<div class="small">
-							<img src="../img/small03.jpg" />
+							<img src="./img/small03.jpg" />
 							<a href="#"><p color="gray">电视</p></a>
 							<p style="color: red;">¥2999</p>
 						</div>
 						<div class="small">
-							<img src="../img/small03.jpg" />
+							<img src="./img/small03.jpg" />
 							<a href="#"><p color="gray">电视</p></a>
 							<p style="color: red;">¥2999</p>
 						</div>
 						<div class="small">
-							<img src="../img/small03.jpg" />
+							<img src="./img/small03.jpg" />
 							<a href="#"><p color="gray">电视</p></a>
 							<p style="color: red;">¥2999</p>
 						</div>
@@ -187,7 +202,7 @@
 			</div>
 			<!-- 5.广告部分 -->
 			<div>
-				<img src="../img/ad.jpg" width="100%" />
+				<img src="./img/ad.jpg" width="100%" />
 			</div>
 			<!-- 6.热门商品 -->
 			<div id="hot_product">
