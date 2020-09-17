@@ -3,21 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>注册页面</title>
-		<script>
-			function show(){
-				// 1.获取提醒标签元素
-				document.getElementById("userspan").innerHTML("<font color='red'>*</font>用户名不能为空");
-				alert("123");
-			}
-			function checkifblank(){
-				uValue = document.getElementById("user").value;
-				if(uValue==""){
-					alert("用户名不能为空");
-				}
-				
-			}
-			// alert("123");
-		</script>
+		<script src="./register.js"></script>
+		<link rel="stylesheet" type="text/css" href="./register.css" />
 	</head>
 	<body>
 		<table align="center">
@@ -65,69 +52,72 @@
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td class="input_item">
 									用户名
 								</td>
 								<td>
-									<input type="text" id="user" name="user" size="34px" onfocus="show()" onblur="checkifblank()"/>
+									&nbsp;&nbsp;<input type="text" id="user" name="user" size="34px" onfocus="showtips('user','用户名必填')" onblur="checkifblank('user')"/>
 									<span id="userspan"></span>
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td class="input_item">
 									密码
 								</td>
 								<td>
-									<input type="password" name="password" />
+									&nbsp;&nbsp;<input type="password" name="password" id="password" onfocus="showtips('password','密码必填')" />
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td class="input_item">
 									确认密码
 								</td>
-								<td>
-									<input type="password" name="repassword" />
+								<td >
+									&nbsp;&nbsp;<input type="password" name="repassword" id="repassword" onblur="checkpwd('repassword')"/>
+									<span id="repasswordspan"></span>
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td class="input_item">
 									Email
 								</td>
 								<td>
-									<input type="text" name="email" size="34px"/>
+									&nbsp;&nbsp;<input type="text" name="email" size="34px" id="email" onfocus="showtips('email','邮箱为必填项')" onblur="checkifblank('email')"/>
+									<span id="emailspan"></span>
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td class="input_item">
 									姓名
 								</td>
 								<td>
-									<input type="text" name="username" size="34px"/>
+									&nbsp;&nbsp;<input type="text" name="username" id="name" size="34px" onfocus="showtips('name','姓名为必填项')" onblur="checkifblank('name')"/>
+									<span id="namespan"></span>
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td class="input_item">
 									性别
 								</td>
 								<td>
-									<input type="radio" name="sex" value="男" />男
+									&nbsp;&nbsp;<input type="radio" name="sex" value="男" />男
 									<input type="radio" name="sex" value="女"/>女
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td class="input_item">
 									出生日期
 								</td>
 								<td>
-									<input type="text" name="birthday" size="34px"/>
+									&nbsp;&nbsp;<input type="text" name="birthday" size="34px"/>
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td class="input_item">
 									验证码
 								</td>
 								<td>
-									<input type="text" name="yzm"size="34px"/>
+									&nbsp;&nbsp;<input type="text" name="yzm"size="34px"/>
 									<img src="./img/yanzhengma.png" />
 								</td>
 							</tr>
