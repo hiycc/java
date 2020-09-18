@@ -47,7 +47,48 @@
 			}
 
 		</style>
-		
+		<script>
+			function changecities(city){
+				var provice = new Array(4);
+				for(i=0;i<4;i++){
+					provice[i] = new Array(4);
+				}
+				provice[0]=["武汉市","黄石市","襄樊市","十堰市"];
+				provice[1]=["长沙市","株洲市","湘潭市","衡阳市"];
+				provice[2]=["郑州市","开封市","洛阳市","平顶山市"];
+				provice[3]=["石家庄市","唐山市","秦皇岛市","邯郸市"];
+				
+				// 将原有option先清空
+				sel2 = document.getElementById("sel2");
+				// alert(sel2.children.length);
+				// alert(sel2.contains(option));
+				// alert(sel2.lastChild.value);
+				// if(!sel2.contains(document.option)){
+				// 	alert("123");
+				// }
+				// if(!sel2.contains(document.option)){
+				// 	alert("123");
+				// }
+				// while(sel2.contains(document.option)){
+				// 	alert("123");
+					// var flag = sel2.lastChild;
+					// sel2.removeChild(flag);
+				// }
+				while(sel2.children.length!=0){
+					var flag = sel2.lastChild;
+					sel2.removeChild(flag);
+				}
+				
+				
+				for(i=0;i<provice[city].length;i++){
+					var oEle = document.createElement("option");
+					oEle.appendChild(document.createTextNode(provice[city][i]));
+					sel2.appendChild(oEle);
+					// alert(sel2.lastChild.value);
+				}
+				// alert(sel2.children.length);
+			}
+		</script>
 	</head>
 	<body>
 		<div>
@@ -129,14 +170,14 @@
 							<td>籍贯</td>
 							<td>
 								<!--2.确定事件，通过函数传参的方式拿到改变后的城市-->
-								<select>
+								<select onchange="changecities(value)">
 									<option>--请选择--</option>
 									<option value="0">湖北</option>
 									<option value="1">湖南</option>
 									<option value="2">河南</option>
 									<option value="3">河北</option>
 								</select>
-								<select>
+								<select id="sel2">
 									
 								</select>
 							</td>
