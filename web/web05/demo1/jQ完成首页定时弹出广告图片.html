@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<style>
+			#father{
+				border: 1px solid red;
+				width: 1300px;
+				height: 2000px;
+				margin: auto;
+				
+			}
+			#logo{	
+				border: 1px solid black;
+				width: 1300px;
+				height: 50px;
+			}
+			.top{
+				border: 1px solid blue;
+				width: 431px;
+				height: 50px;
+				float: left;
+			}
+			#top{
+				padding-top: 12px;
+				height: 38px;
+			}
+			#menu{
+				border: 1px solid red;
+				height: 50px;
+				width: 1300px;
+				background-color: #000000;
+				margin-top: 5px;
+			
+			}
+			ul li{
+				display: inline;
+				color: white;
+			}
+			#clear{
+				clear: all;
+			}
+			#product,#hot_product{
+				border: 1px solid red;
+				width: 1300px;
+				height: 500px;
+			}
+			#product_top,#hot_product_top{
+				border: 1px solid green;
+				height: 45px;
+				width: 100%;
+				padding-top: 8px;
+			}
+			#product_bottom,#hot_product_bottom{
+				border: 1px solid pink;
+				height: 448px;
+				width: 100%;
+			}
+			#product_bottom_left,#hot_product_bottom_left{
+				border: 1px solid #0000FF;
+				height: 446px;
+				width: 200px;	
+				float: left;
+			}
+			#product_bottom_right,#hot_product_bottom_right{
+				border: 1px solid #008000;
+				height: 446px;
+				width: 1094px;
+				float: left;
+			}
+			#big{
+				border: 1px solid orange;
+				height: 220px;
+				width: 546px;
+				float: left;
+			}
+			.small{
+				border: 1px solid yellow;
+				height: 220px;
+				width: 180px;
+				float: left;
+				text-align: center;
+			}
+			#ad{
+				border: 1px solid aqua;
+				width: 1300px;
+				height: 200px;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+		<script>
+			$(function(){
+				//书写显示广告图片的定时操作
+				time = setInterval("showAd()",3000);
+			})
+			
+			//书写显示广告图片的函数
+			function showAd(){
+				//3.获取广告图片
+				// $("#img2").show(1000);
+				// $("#img2").slideDown(5000);
+				$("#img2").fadeIn(4000);
+				//4.清除显示图片定时操作
+				clearInterval(time);
+				//5.设置隐藏图片的定时操作
+				time = setInterval("hiddenAd()",3000);
+				
+			}
+			function hiddenAd(){
+				//6.获取广告图片位置
+				// $("#img2").hide();
+				$("#img2").fadeOut();
+				//7.清除隐藏图片的定时操作
+				clearInterval(time);
+			}
+			
+			// function init(){
+			// 	//书写轮播图显示的定时操作
+			// 	window.setInterval("changeImg()",3000);
+			// }
+			
+			// var i =0;
+			// function changeImg(){
+			// 	i++;
+			// 	document.getElementById("img1").src="./img/"+i+".jpg";
+			// 	if(i==3){
+			// 		i=0;
+			// 	}
+			// }
+		</script>
+	</head>
+	<body onload="init()">
+		<div id="father">
+			<!-- 定时弹出广告图片的位置 -->
+			<img src="../img/f001a62f-a49d-4a4d-b56f-2b6908a0002c_g.jpg" width="100%" style="display: none;" id="img2"/>
+			<!-- 1.logo部分 -->
+			<div id="logo">
+				<div class="top">
+					<img src="./img/logo2.png" height="46px" />
+				</div>
+				<div class="top">
+					<img src="./img/header.png" height="46px" />
+				</div>
+				<div class="top" id="top">
+					<a href="#">登录</a>
+					<a href="#">注册</a>
+					<a href="#">购物车</a>
+				</div>
+			</div>
+			<div id="clear">
+				
+			</div>
+			<!-- 2.导航栏部分 -->
+			<div id="menu">
+				<ul>
+					<a href="#"><li style="font-size: 20px;">首页</li></a>&nbsp;&nbsp;&nbsp;
+					<a href="#"><li>手机数码</li></a>&nbsp;&nbsp;&nbsp;
+					<a href="#"><li>家用电器</li></a>&nbsp;&nbsp;&nbsp;
+					<a href="#"><li>鞋靴箱包</li></a>&nbsp;&nbsp;&nbsp;
+					<a href="#"><li>孕育保健</li></a>&nbsp;&nbsp;&nbsp;
+					<a href="#"><li>奢侈品</li></a>
+				</ul>
+			</div>
+			<!-- 3.轮播图部分 -->
+			<div>
+				<img src="./img/1.jpg" width="100%"/ id="img1">
+			</div>
+			<!-- 4.最新商品 -->
+			<div id="product">
+				<div id="product_top">
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size: 25px;font-weight: 200;">最新产品</font>&nbsp;&nbsp;</span>
+					<img src="./img/title2.jpg" />
+				</div>
+				<div id="product_bottom">
+					<div id="product_bottom_left">
+						<img src="./img/big01.jpg" height="100%" width="100%" />
+					</div>
+					<div id="product_bottom_right">
+						<div id="big">
+							<img src="./img/middle01.jpg" height="100%" width="100%" />
+						</div>
+						<div class="small">
+							<img src="./img/small03.jpg" />
+							<a href="#"><p color="gray">电视</p></a>
+							<p style="color: red;">¥2999</p>
+						</div>
+						<div class="small">
+							<img src="./img/small03.jpg" />
+							<a href="#"><p color="gray">电视</p></a>
+							<p style="color: red;">¥2999</p>
+						</div>
+						<div class="small">
+							<img src="./img/small03.jpg" />
+							<a href="#"><p color="gray">电视</p></a>
+							<p style="color: red;">¥2999</p>
+						</div>
+						<div class="small">
+							<img src="./img/small03.jpg" />
+							<a href="#"><p color="gray">电视</p></a>
+							<p style="color: red;">¥2999</p>
+						</div>
+						<div class="small">
+							<img src="./img/small03.jpg" />
+							<a href="#"><p color="gray">电视</p></a>
+							<p style="color: red;">¥2999</p>
+						</div>
+						<div class="small">
+							<img src="./img/small03.jpg" />
+							<a href="#"><p color="gray">电视</p></a>
+							<p style="color: red;">¥2999</p>
+						</div>
+						<div class="small">
+							<img src="./img/small03.jpg" />
+							<a href="#"><p color="gray">电视</p></a>
+							<p style="color: red;">¥2999</p>
+						</div>
+						<div class="small">
+							<img src="./img/small03.jpg" />
+							<a href="#"><p color="gray">电视</p></a>
+							<p style="color: red;">¥2999</p>
+						</div>
+						<div class="small">
+							<img src="./img/small03.jpg" />
+							<a href="#"><p color="gray">电视</p></a>
+							<p style="color: red;">¥2999</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 5.广告部分 -->
+			<div>
+				<img src="./img/ad.jpg" width="100%" />
+			</div>
+			<!-- 6.热门商品 -->
+			<div id="hot_product">
+				<div id="hot_product_top">
+					
+				</div>
+				<div id="hot_product_bottom">
+						<div id="hot_product_bottom_left">
+							
+						</div>
+						<div id="hot_product_bottom_right">
+							<div id="hot_big">
+								
+							</div>
+							<div class="small"></div>
+							<div class="small"></div>
+							<div class="small"></div>
+							<div class="small"></div>
+							<div class="small"></div>
+							<div class="small"></div>
+							<div class="small"></div>
+							<div class="small"></div>
+							<div class="small"></div>
+						</div>
+				</div>
+			</div>
+			<!-- 7.广告图片 -->
+			<div>
+				
+			</div>
+			<!-- 8.友情链接和版权信息 -->
+			<div>
+				
+			</div>
+		</div>
+	</body>
+</html>
